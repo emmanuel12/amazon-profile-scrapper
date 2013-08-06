@@ -67,7 +67,7 @@ def catg():
     #print urls       
     for ii in urls:
         #a = requests.get(ii,headers={'User-Agent': 'Mozilla/5.0'}).text #If you're on a windows machine, works for both windows and linux, but can sometimes be unreliable and slow.
-        a = subprocess.check_output("scrapy fetch '%s'"%ii,shell=True) #I know wierd, but this seems to be quite reliable.
+        a = subprocess.check_output("scrapy fetch '%s'"%ii,shell=True) #I know weird, but this seems to be quite reliable.
         hxs = HtmlXPathSelector(text=a)               
         for p in hxs.select('//span'):
             if 'class="pagnDisabled"' in p:
